@@ -4,18 +4,16 @@ import datetime
 
 
 def startUpScreen():
-    global cycleFlag
     userInput=""
     print("Hello and welcome, what do you want to do? (Press 's' if you want to start the function, press 'e' if you want to stop the engine")
     while(userInput!="e"):
         userInput=input()
         if userInput=="s":
             if cycleFlag==0:
-                startFunc()
+                startFsunc()
             else:
                 print("You can`t use this function twice in one cycle")
     if userInput=="e":
-        cycleFlag=0
         print("I hope you enjoyed your trip")
         quit()
         

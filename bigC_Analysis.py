@@ -1,4 +1,4 @@
-from selenium import webdriver
+#from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait 
 from selenium.webdriver.support import expected_conditions as EC 
@@ -6,12 +6,13 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By 
 import time 
 import random
+from sheetsAPI import sheets
 
 time_saver=open('C:/Users/drott/DS_Python/.venv/build/exe.win-amd64-3.9/last_ts.txt','r+')
 last_ts=int(time_saver.read())
 cur_t=time.gmtime()
 cur_ts=int(time.mktime(cur_t))
-
+last_ts=1
 if cur_ts - last_ts > 1814400:
     last_ts=cur_ts
     time_saver.seek(0)
@@ -19,7 +20,12 @@ if cur_ts - last_ts > 1814400:
     time_saver.truncate()
     time_saver.close()
 
-    
+    sheet=sheets()
+    sheet.authenticate()
+    values=sheet.getSheetValue()
+    for row in values:
+        # Print columns A and E, which correspond to indices 0 and 4.
+        print('%s' % (row[0]))
     ground_tenants=["Narayan", "Akash", "Russ","Deepak", "Daniela"]
     high_tenants=["Andreas", "Philipp"]
     tasks=["Ground Floor", "Bathroom 1st floor", "3rd floor", "staircases"]
