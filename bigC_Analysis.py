@@ -9,12 +9,14 @@ import time
 import random
 from sheetsAPI import sheets    #contains the class for the google sheets api
 
+#Declare the lists for the tenants groud and the cleaning tasks as well as the msg
 ground_tenants=[]
 high_tenants=[]
+tasks=["Ground Floor", "Bathroom 1st floor", "3rd floor", "staircases"]
 msg=[]
 # Open the file that contains the ms since the epoch of the last time the script was fully executed
 # Fully executed means the if-statement below was entered
-time_saver=open('C:/Users/drott/DS_Python/.venv/build/exe.win-amd64-3.9/last_ts.txt','r+')
+time_saver=open('./last_ts.txt','r+')
 last_ts=int(time_saver.read())
 cur_ts=int(time.mktime(time.gmtime()))
 last_ts=1
@@ -48,7 +50,6 @@ if cur_ts - last_ts > 1814400:
             else:
                 high_tenants.append(row[1])
         
-    tasks=["Ground Floor", "Bathroom 1st floor", "3rd floor", "staircases"]
     # shuffle the order of ground_tenant to assure that not everyone needs 
     # to do the same task everytime
     random.shuffle(ground_tenants)

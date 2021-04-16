@@ -14,8 +14,9 @@ class sheets:
         self.SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 
         # The ID and range of a sample spreadsheet.
-        self.SAMPLE_SPREADSHEET_ID = '1zVb-aFqBkjslnahPpIy25WvsQyD2s00tnN3Ma-zRhMg'
-        self.SAMPLE_RANGE_NAME = 'Sheet1!A7:B14'
+        sheetID=str(open('./SAMPLE_SPREADSHEET_ID.txt','r').read())
+        self.SAMPLE_SPREADSHEET_ID = sheetID
+        self.SAMPLE_RANGE_NAME = 'Sheet1!A8:B15'
         self.value=[]
 
 
