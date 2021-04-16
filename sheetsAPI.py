@@ -15,9 +15,8 @@ class sheets:
 
         # The ID and range of a sample spreadsheet.
         self.SAMPLE_SPREADSHEET_ID = '1zVb-aFqBkjslnahPpIy25WvsQyD2s00tnN3Ma-zRhMg'
-        self.SAMPLE_RANGE_NAME = 'Sheet1!B7:B11'
+        self.SAMPLE_RANGE_NAME = 'Sheet1!A7:B14'
         self.value=[]
-        self.x=0
 
 
     def authenticate(self):
