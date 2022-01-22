@@ -9,7 +9,7 @@ import time
 import random
 from sheetsAPI import sheets    #contains the class for the google sheets api
 
-#on branch "master"
+#on branch "feature 2"
 
 #Declare the lists for the tenants groud and the cleaning tasks as well as the msg
 ground_tenants=[]
